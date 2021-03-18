@@ -23,6 +23,7 @@
           echo"- 1<br>";
           echo "Value is now $variable<br><br>";
           ?>
+          
     </body>
   </head>
 </html>

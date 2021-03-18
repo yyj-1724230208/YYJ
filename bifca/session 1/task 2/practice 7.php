@@ -14,6 +14,7 @@
           $whatis = null;
           echo "Value is ". gettype($whatis)."<br/>\n";
           ?>
+          
     </body>
   </head>
 </html>

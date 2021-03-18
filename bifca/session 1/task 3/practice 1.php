@@ -8,7 +8,6 @@
                	$total = $total + $i;
                }
                 echo "1~30 = $total" ;
-
          ?>
   </body>
 
