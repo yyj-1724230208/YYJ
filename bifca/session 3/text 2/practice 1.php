@@ -11,18 +11,18 @@
       $password = "";
       $dbname = "classicmodels";
       $connection = new mysqli($servername, $username, $password, $dbname);
-      $sql = "SELECT lastName, firstName, jobTitle From employees ORDER BY lastName ASC";
+      $sql = "SELECT contactLastName, country, city From customers";
 
 
       $result = mysqli_query($connection,$sql);
       if(mysqli_num_rows($result) > 0){
       	echo"<table>
-      	         <tr><th>LastName</th><th>FirstName</th><th>JobTitle</th></tr>";
+      	         <tr><th>LastName</th><th>country</th><th>city</th></tr>";
       	         while($row = mysqli_fetch_assoc($result)){
       	         	echo"<tr>
-      	         	      <td>".$row["lastName"]."</td>
-      	         	      <td>".$row["firstName"]."</td>
-      	         	      <td>".$row["jobTitle"]."</td>
+      	         	      <td>".$row["contactLastName"]."</td>
+      	         	      <td>".$row["country"]."</td>
+      	         	      <td>".$row["city"]."</td>
       	         	     </tr>";
       	                 }
         echo "</table>";
