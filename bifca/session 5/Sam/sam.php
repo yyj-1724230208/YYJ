@@ -20,24 +20,28 @@
 
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-      if(isset($_GET['id'])){
-         $pokemon = $_GET['id'];
-         }
-      else {
-        $pokemon = 1;
-      }
-      $url = "https://pokeapi.co/api/v2/pokemon/".$pokemon;
+    //  if(isset($_GET['stat'])){
+    //     $num = $_GET['stat'];
+    //     }
+    //  else {
+    //    $num = 1;
+    //  }
+    //  $url = "http://v.juhe.cn/toutiao/index".$num;
 
+      $key = "APPKEY";
+      $query = array(
+        "key"=>$key,
+        "type"=>"top"
+      );
 
+      $url="http://v.juhe.cn/toutiao/index"."?".http_build_query($query);
 
       curl_setopt($curl,CURLOPT_URL,$url);
 
       $result = json_decode(curl_exec($curl));
 
-      print "<img src='".$result->sprites->front_default."' style= height=400px; width=200px;><br>";
-      print "<h1>".$result->name."</h1>";
-      print "<h1>Height:".$result->height."</h1>";
-      print "<h1>Weight:".$result->weight."</h1>";
+      print "<h1>".$result->data->title."</h1>";
+      print "<h1>".$result->data->author_name."</h1>";
 
     ?>
     <div>
